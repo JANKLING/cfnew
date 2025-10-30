@@ -78,6 +78,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit, the obfuscated file is already up-to-date."
           else
-            git commit -m "build: Generate and obfuscate worker script"
+            git commit -m "build: Generate and obfuscate2 worker script"
             git push
           fi
