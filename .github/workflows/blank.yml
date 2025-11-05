@@ -86,7 +86,7 @@ jobs:
           EOF
           node obfuscate.js
 
-      - name: 2.1Commit and push the obfuscated file
+      - name: Commit and push the obfuscated file
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
