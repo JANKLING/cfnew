@@ -31,9 +31,6 @@ jobs:
             const sourceFileName = 'edgetunnel 优选订阅列表-更新.txt';
             const outputFileName = 'edgetunnel 优选订阅列表-更新NEW';
 
-            const sourceFileName = '黑客帝国2.1';
-            const outputFileName = '黑客帝国2.1-NEW';
-
             const sourceFilePath = path.join(process.cwd(), sourceFileName);
 
             if (!fs.existsSync(sourceFilePath)) {
@@ -74,16 +71,15 @@ jobs:
             console.log('成功将 \'' + sourceFileName + '\' 混淆并保存至 \'' + outputFileName + '\'。');
           "
 
-      - name: Commit and push the obfuscated file
+      - name: 2Commit and push the obfuscated file
         run: |
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add 'edgetunnel 优选订阅列表-更新NEW'
-          git add '黑客帝国2.1-NEW'
 
           if git diff --staged --quiet; then
             echo "No changes to commit, the obfuscated file is already up-to-date."
           else
-            git commit -m "build: 2Generate and obfuscate2 worker script"
+            git commit -m "build: Generate and obfuscate2 worker script"
             git push
           fi
